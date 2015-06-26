@@ -2,9 +2,6 @@
 
 namespace OopsTests\CacheFactory\DI;
 
-use Nette\Caching\Storages\DevNullStorage;
-use Oops\CacheFactory\Caching\CacheFactory;
-use Oops\CacheFactory\DI\CacheFactoryExtension;
 use Tester\Assert;
 use Tester\TestCase;
 
@@ -23,11 +20,12 @@ class ExtensionTest extends TestCase
 		$container = $configurator->createContainer();
 
 		$cacheFactory = $container->getService('cacheFactory.cacheFactory');
-		Assert::type(CacheFactory::class, $cacheFactory);
-		Assert::type(DevNullStorage::class, $cacheFactory->create()->getStorage());
+		Assert::type('Oops\CacheFactory\Caching\CacheFactory', $cacheFactory);
+		Assert::type('Nette\Caching\Storages\DevNullStorage', $cacheFactory->create()->getStorage());
 	}
 
 }
 
 
-(new ExtensionTest())->run();
+$test = new ExtensionTest();
+$test->run();
