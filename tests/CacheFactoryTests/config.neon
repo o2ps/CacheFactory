@@ -1,0 +1,5 @@
+extensions:
+	cacheFactory: Oops\CacheFactory\DI\CacheFactoryExtension
+
+services:
+	cache.storage: Nette\Caching\Storages\DevNullStorage
