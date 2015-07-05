@@ -16,7 +16,7 @@ Oops/CacheFactory requires PHP >= 5.3.
 
 Register the extension in your config:
 
-```
+```yaml
 extensions:
 	cacheFactory: Oops\CacheFactory\DI\CacheFactoryExtension
 ```
@@ -33,6 +33,7 @@ class CachedFoo
 		$this->cache = new Nette\Caching\Cache($cacheStorage, 'namespace');
 	}
 }
+```
 
 becomes this:
 
