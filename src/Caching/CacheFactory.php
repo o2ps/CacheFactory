@@ -19,6 +19,10 @@ class CacheFactory
 	}
 
 
+	/**
+	 * @param string $namespace
+	 * @return Cache
+	 */
 	public function create($namespace = NULL, IStorage $storage = NULL)
 	{
 		return new Cache($storage !== NULL ? $storage : $this->storage, $namespace);
