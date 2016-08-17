@@ -6,10 +6,10 @@ Caching is a very common task in web development. The current practice of creati
 ## Installation and requirements
 
 ```bash
-$ composer require oops/cache-factory:~1.0
+$ composer require oops/cache-factory
 ```
 
-Oops/CacheFactory requires PHP >= 5.3.
+Oops/CacheFactory requires PHP >= 5.6.
 
 
 ## Usage

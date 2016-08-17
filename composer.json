@@ -16,7 +16,7 @@
 		"issues": "https://github.com/o2ps/CacheFactory/issues"
 	},
 	"require": {
-		"php": ">= 5.3.0",
+		"php": ">= 5.6.0",
 		"nette/caching": "~2.2",
 		"nette/di": "~2.2"
 	},
