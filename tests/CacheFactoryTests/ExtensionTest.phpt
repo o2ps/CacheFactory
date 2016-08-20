@@ -2,6 +2,9 @@
 
 namespace OopsTests\CacheFactory\DI;
 
+use Nette\Caching\Storages\DevNullStorage;
+use Nette\Configurator;
+use Oops\CacheFactory\Caching\CacheFactory;
 use Tester\Assert;
 use Tester\TestCase;
 
@@ -14,14 +17,14 @@ class ExtensionTest extends TestCase
 
 	public function testExtension()
 	{
-		$configurator = new \Nette\Configurator();
+		$configurator = new Configurator();
 		$configurator->addConfig(__DIR__ . '/config.neon');
 		$configurator->setTempDirectory(TEMP_DIR);
 		$container = $configurator->createContainer();
 
 		$cacheFactory = $container->getService('cacheFactory.cacheFactory');
-		Assert::type('Oops\CacheFactory\Caching\CacheFactory', $cacheFactory);
-		Assert::type('Nette\Caching\Storages\DevNullStorage', $cacheFactory->create()->getStorage());
+		Assert::type(CacheFactory::class, $cacheFactory);
+		Assert::type(DevNullStorage::class, $cacheFactory->create()->getStorage());
 	}
 
 }
