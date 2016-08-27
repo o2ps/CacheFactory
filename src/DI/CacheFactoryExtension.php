@@ -3,6 +3,7 @@
 namespace Oops\CacheFactory\DI;
 
 use Nette\DI\CompilerExtension;
+use Oops\CacheFactory\Caching\CacheFactory;
 
 
 class CacheFactoryExtension extends CompilerExtension
@@ -13,7 +14,7 @@ class CacheFactoryExtension extends CompilerExtension
 		$builder = $this->getContainerBuilder();
 
 		$builder->addDefinition($this->prefix('cacheFactory'))
-			->setClass('Oops\\CacheFactory\\Caching\\CacheFactory');
+			->setClass(CacheFactory::class);
 	}
 
 }
