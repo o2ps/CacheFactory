@@ -1,5 +1,7 @@
 # Oops/CacheFactory
 
+:warning: **THIS PACKAGE IS NO LONGER MAINTAINED.** You can use [contributte/cache](https://github.com/contributte/cache) instead.
+
 Caching is a very common task in web development. The current practice of creating `Cache` instances in Nette is to enumerate `IStorage` as a dependency and create the `Cache` by hand, as seen [in the docs](http://doc.nette.org/en/2.3/caching#toc-storage-service). This, however, makes unit testing classes that depend on cache a pain in the you-know-what. You either need to mock the storage and go through `Cache` code to find what methods are called upon the storage, or use some [autoloading magic](http://docs.mockery.io/en/latest/cookbook/mocking_hard_dependencies.html). I don't think either way is a good one to go. I've found myself writing a simple factory like the one in this package on every project, so I made an extension out of it.
 
 
